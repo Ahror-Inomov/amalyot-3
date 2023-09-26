@@ -1,0 +1,183 @@
+@use "../mixins";
+.contact-hero {
+   padding: 80px 0 88px;
+}
+.contact-hero__wrapper {
+   @include mixins.flex-boxs(column, start, center);
+   margin: 0 auto;
+}
+.contact-hero__top {
+   margin-bottom: 56px;
+   width: 100%;
+   text-align: center;
+}
+.contact-hero__title {
+   text-align: center;
+   font-weight: 700;
+   @include mixins.title-text(16px, 40px, 40px, #fff);
+}
+.contact-hero__subtitle {
+   text-align: center;
+   font-weight: 700;
+   @include mixins.title-text(40px, 32px, 48px, #f67e7e);
+}
+.contact-hero__list {
+   @include mixins.list-reset;
+   @include mixins.box(327px);
+   margin: 0 auto;
+}
+.contact-hero__item {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   @include mixins.box(327px);
+   margin-bottom: 24px;
+   text-align: start;
+   &::before {
+     margin-right: 23px;
+     @include mixins.p-element(relative, 0, 0, 72px, 72px);
+     background-image: url(../../images/avatar.svg);
+     @include mixins.backgrounds;
+     background-size: 72px 72px;
+   }
+}
+.contact-hero__item:nth-child(2) {
+   &::before {
+      background-image: url(../../images/settings.svg);
+   }
+}
+.contact-hero__item:last-child {
+   margin-bottom: 0;
+   &::before {
+      background-image: url(../../images/diagrem.svg)
+   }
+}
+.contact-hero__text-wrapper {
+   @include mixins.box(160px);
+}
+.contact-hero__text {
+   font-weight: 700;
+   @include mixins.title-text(0, 18px, 28px, #fff);
+}
+.form {
+   @include mixins.mobile(325px);
+   width: 100%;
+}
+.form__input {
+   display: block;
+   width: 100%;
+   @include mixins.title-text(0, 15px, 25px, #fff);
+   margin-bottom: 8px;
+   padding: 16px 14px;
+   border: none;
+   border-top: 1px solid transparent;
+   border-right: 1px solid transparent;
+   border-bottom: 1px solid #acaaaa;
+   border-left: 1px solid transparent;
+   background-color: transparent;
+   letter-spacing: -0.115px;
+   outline: none;
+   &::placeholder {
+      @include mixins.title-text(0, 15px, 25px, #fff);
+      letter-spacing: -0.115px;
+      opacity: 0.6;
+   }
+}
+.form__input:focus {
+   border: 1px solid #fff;
+}
+.form__input--last {
+   margin-bottom: 24px;
+   resize: none;
+}
+.form__btn {
+   display: block;
+   width: 123px;
+   padding: 9px 16px 11px;
+   border: 2px solid transparent;
+   border-radius: 24px;
+   @include mixins.title-text(0, 18px, 28px, #002529);
+   transition: background-color 0.3s linear, opacity 0.3s linear;
+   &:hover {
+      background-color: #79c8c7;
+   }
+   &:active {
+      opacity: 0.25;
+   }
+}
+@include mixins.mobile(294px) {
+   .contact-hero__item {
+      justify-content: center;
+   }
+}
+@include mixins.mobile(555px) {
+   .contact-hero__list {
+      max-width: 515px;
+   }
+   .contact-hero__item {
+      justify-content: center;
+      max-width: 715px;
+   }
+   .contact-hero__text-wrapper {
+      max-width: 360px;
+   }
+}
+@include mixins.mobile(582px) {
+   .form {
+      width: 542px;
+   }
+}
+@include mixins.mobile(692px) {
+   .contact-hero {
+      padding: 112px 0 112px;
+      background-image: url(../../images/teamleft.svg);
+      background-repeat: no-repeat;
+      background-position: left 0 top 0;
+   }
+   .contact-hero__top {
+      margin-bottom: 64px;
+   }
+   .contact-hero__title {
+      @include mixins.title-text(24px, 64px, 56px, #fff);
+   }
+   .contact-hero__subtitle {
+      margin-bottom: 24px;
+   }
+   .contact-hero__item {
+      margin-bottom: 8px;
+   }
+}
+@include mixins.mobile(992px) {
+   .contact-hero {
+      padding: 132px 0 120px;
+   }
+   .contact-hero__title {
+      @include mixins.title-text(16px, 64px, 100px, #fff);
+   }
+   .contact-hero__subtitle {
+      margin-bottom: 32px;
+   }
+}
+@include mixins.mobile(1170px) {
+   .contact-hero {
+      padding: 0 100px;
+   }
+   .contact-hero__wrapper {
+      @include mixins.flex-boxs(row, space-between, start)
+   }
+   .contact-hero__top {
+      width: 540px;
+   }
+   .contact-hero__title {
+      text-align: start;
+   }
+   .contact-hero__subtitle {
+      text-align: start;
+   }
+   .contact-hero__list {
+      margin-right: 32px;
+   }
+   .contact-hero__item {
+      justify-content: start;
+   }
+}

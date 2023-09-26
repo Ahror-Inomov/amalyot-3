@@ -1,0 +1,63 @@
+@use "../mixins";
+.hero {
+   padding: 50px 0 108px;
+   background-color: #014e56;
+   background-image: url(../../images/heroright.svg);
+   background-repeat: no-repeat;
+   background-size: 100px 200px;
+   background-position: right 0 bottom -100px;
+}
+.hero__inner {
+   display: block;
+   text-align: center;
+}
+.hero__title {
+   font-weight: 700;
+   @include mixins.title-text(16px, 40px, 40px, #fff);
+}
+.hero__text-wrapper {
+   @include mixins.box(327px);
+   margin: 0 auto;
+}
+.hero__text {
+   @include mixins.title-text(0, 12px, 28px, #fff);
+}
+@include mixins.mobile(375px) {
+   .hero__text {
+      font-size: 15px;
+   }
+}
+@include mixins.mobile(600px) {
+   .hero {
+      padding-bottom: 112px;
+      background-position: right 0 bottom 0;
+   }
+   .hero__title {
+      @include mixins.title-text(24px, 64px, 56px, #fff);
+   }
+   .hero__text-wrapper {
+      max-width: 457px;
+   }
+}
+@include mixins.mobile(992px) {
+   .hero {
+      padding-bottom: 120px;
+   }
+   .hero__inner {
+      @include mixins.flex-box(space-between, start);
+   }
+   .hero__title {
+      line-height: 100px;
+   }
+   .hero__text-wrapper {
+      @include mixins.flex-boxs(column, flex-start, start);
+      max-width: 613px;
+      margin-right: 0;
+      text-align: start;
+      &::before {
+         @include mixins.p-element(relative, 0, 0, 50px, 4px);
+         margin-bottom: 40px;
+         background-color: #f67e7e;
+      }
+   }
+}

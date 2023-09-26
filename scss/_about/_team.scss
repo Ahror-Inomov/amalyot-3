@@ -1,0 +1,136 @@
+@use "../mixins";
+.team {
+   padding: 88px 0 116px;
+   background-color: #004047;
+   background-image: url(../../images/teamleft.svg), url(../../images/teamright.svg);
+   background-repeat: no-repeat;
+   background-position: left 0 top -100px, right 0 bottom 0;
+}
+.team__wrapper {
+   text-align: center;
+}
+.team__title {
+   font-weight: 700;
+   @include mixins.title-text(48px, 27px, 32px, #fff);
+}
+.team__list {
+   @include mixins.list-reset;
+   margin: 0 auto;
+}
+.team__item {
+   position: relative;
+   @include mixins.flex-boxs(column, start, center);
+   margin: 0 auto 52px;
+   padding: 32px 24px 0;
+   @include mixins.box(327px);
+   background-color: #012f34;
+}
+.team__item:last-child {
+   margin-bottom: 0;
+}
+.team__item:nth-child(2) .team__name::before {
+   background-image: url(../../images/cristian.png)
+}
+.team__item:nth-child(3) .team__name::before {
+   background-image: url(../../images/cruz.png)
+}
+.team__item:nth-child(4) .team__name::before {
+   background-image: url(../../images/drake.png)
+}
+.team__item:nth-child(5) .team__name::before {
+   background-image: url(../../images/grifin.png)
+}
+.team__name {
+   @include mixins.flex-boxs(column, start, center);
+   @include mixins.title-text(0, 18px, 28px, #79c8c7);
+   &::before {
+      @include mixins.p-element(relative, 0, 0, 98px, 96px);
+      margin-bottom: 16px;
+      background-image: url(../../images/nikita.png);
+      @include mixins.backgrounds;
+   }
+}
+.team__career {
+   @include mixins.title-text(0, 15px, 25px, #fff);
+   font-style: italic;
+}
+.team__btn {
+   @include mixins.p-element(relative, 28px, 0, 56px, 56px);
+   border-color: transparent;
+   background-color: transparent;
+   background-image: url(../../images/add.svg);
+   @include mixins.backgrounds;
+}
+.author {
+   font-weight: 700;
+   font-style: normal;
+   @include mixins.title-text (8px, 18px, 28px, #79c8c7);
+}
+.author-text {
+   font-weight: 600;
+   @include mixins.title-text(24px, 15px, 25px, #fff);
+   margin-left: 0;
+   margin-right: 0;
+}
+.team__inner-list {
+   @include mixins.list-box;
+   align-items: center;
+}
+.team__inner-link {
+   color: #fff;
+   &:hover {
+      color: #f67e7e;
+   }
+}
+.team__inner-item:first-child {
+   margin-right: 12px;
+}
+@include mixins.mobile(375px) {
+   .team__title {
+      font-size: 32px;
+   }
+}
+@include mixins.mobile(620px) {
+   .team {
+      padding: 100px 0 128px;
+   }
+   .team__list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @include mixins.box(570px);
+   }
+   .team__item {
+      max-width: 280px;
+      margin: 0 0 76px;
+   }
+   .team__item:nth-child(5) {
+      margin-bottom: 0;
+   }
+   .team__item:last-child .team__btn {
+      top: 35px;
+   }
+}
+@include mixins.mobile(700px) {
+   .team {
+      background-position: left 0 top 0, right 0 bottom 0;
+   }
+}
+@include mixins.mobile(1070px) {
+   .team__title {
+      @include mixins.title-text(64px, 48px, 48px, #fff);
+   }
+   .team__list {
+      max-width: 1110px;
+   }
+   .team__item {
+      max-width: 350px;
+   }
+   .team__item:nth-child(4) {
+      margin-bottom: 0;
+   }
+   .team__item:last-child {
+      padding-right: 48px;
+      padding-left: 48px;
+   }
+}

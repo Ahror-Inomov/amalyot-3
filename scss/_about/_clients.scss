@@ -1,0 +1,102 @@
+@use "../mixins";
+.clients {
+   padding: 88px 0;
+   background-color: #012f34;
+   background-image: url(../../images/clients-bg.svg);
+   background-repeat: no-repeat;
+   background-position: left -100px top -100px;
+}
+.clients__wrapper {
+   @include mixins.flex-boxs(column, start, center);
+}
+.clients__title {
+   font-weight: 700;
+   @include mixins.title-text(64px, 25px, 32px, #fff);
+}
+.clients__list {
+   @include mixins.list-reset;
+   @include mixins.flex-boxs(column, center, center);
+}
+.clients__item {
+   margin-bottom: 37px;
+}
+.clients__item:nth-child(1) img {
+   @include mixins.images(147px, 24px);
+}
+.clients__item:nth-child(2) img {
+   @include mixins.images(162px, 20px);
+}
+.clients__item:nth-child(3) img {
+   @include mixins.images(159px, 24px);
+}
+.clients__item:nth-child(4) img {
+   @include mixins.images(147px, 24px);
+}
+.clients__item:nth-child(5) img {
+   @include mixins.images(87px, 40px);
+}
+@include mixins.mobile(375px) {
+   .clients__title {
+      font-size: 32px;
+   }
+}
+@include mixins.mobile(730px) {
+   .clients {
+      padding: 100px 0;
+      background-position: left 0 top -100px;
+   }
+   .clients__list {
+      flex-direction: row;
+   }
+   .clients__item {
+      margin-right: 48px;
+      margin-bottom: 0;
+   }
+   .clients__item:last-child {
+      margin-right: 0;
+   }
+   .clients__item:nth-child(1) img {
+      @include mixins.images(103px, 17px);
+   }
+   .clients__item:nth-child(2) img {
+      @include mixins.images(114px, 14px);
+   }
+   .clients__item:nth-child(3) img {
+      @include mixins.images(112px, 17px);
+   }
+   .clients__item:nth-child(4) img {
+      @include mixins.images(103px, 17px);
+   }
+   .clients__item:nth-child(5) img {
+      @include mixins.images(61px, 28px);
+   }
+}
+@include mixins.mobile(992px) {
+   .clients {
+      padding: 140px 0;
+      background-position: left 0 top 0;
+   }
+   .clients__title {
+      font-size: 48px;
+      line-height: 48px;
+   }
+   .clients__list {
+      @include mixins.box(1110px);
+      justify-content: space-between;
+   }
+   .clients__item:nth-child(1) img {
+      @include mixins.images(165px, 28px);
+   }
+   .clients__item:nth-child(2) img {
+      @include mixins.images(182px, 23px);
+   }
+   .clients__item:nth-child(3) img {
+      @include mixins.images(180px, 28px);
+   }
+   .clients__item:nth-child(4) img {
+      @include mixins.images(165px, 28px);
+   }
+   .clients__item:nth-child(5) img {
+      @include mixins.images(98px, 45px);
+   }
+}
